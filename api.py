@@ -14,7 +14,7 @@ def send_mail():
     Endpoint to send mail
 
     params:
-        -from_email
+        -from
         -to
         -cc
         -bcc
@@ -24,7 +24,7 @@ def send_mail():
     data = request.json
 
     if (
-        "from_email" not in data
+        "from" not in data
         or "subject" not in data
         or "text" not in data
         or ("to" not in data and "cc" not in data and "bcc" not in data)
@@ -32,7 +32,7 @@ def send_mail():
         return jsonify({"error": "missing parameters in request!"}), 400
 
     else:
-        from_mail = data["from_email"]
+        from_email = data["from"]
 
         to_list = None
         cc_list = None
@@ -56,7 +56,7 @@ def send_mail():
             text = data["text"]
 
         status, message = EmailService().send_email(
-            from_mail, to_list, cc_list, bcc_list, subject, text
+            from_email, to_list, cc_list, bcc_list, subject, text
         )
 
     return jsonify({"status": status, "message": message})
