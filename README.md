@@ -7,6 +7,24 @@ Email service currently supported are:
 - AWS SES
 - Mandrill
 
+Setup
+-----------
+Create a .env file and add the following keys.
+```
+# mailjet
+mailjet_api_url=https://api.mailjet.com/v3.1/send
+mailjet_key=
+mailjet_secret=
+
+# mandrill
+mandrill_api_url=https://mandrillapp.com/api/1.0/messages/send
+mandrill_key=
+
+# aws
+AWSAccessKeyId=
+AWSSecretKey=
+```
+
 Endpoint URL
 -----------
 ```
@@ -37,3 +55,13 @@ status code | message
 3           | subject and text both are empty
 4           | all email sender failed
 5           | email provider configuration not complete
+
+
+Note
+-----------
+It can be also used as pip package by creating object of class 'EmailService' and by calling 'send_mail' method.
+```
+status, message = EmailService().send_email(
+            from_email, to_list, cc_list, bcc_list, subject, text
+        )
+```
