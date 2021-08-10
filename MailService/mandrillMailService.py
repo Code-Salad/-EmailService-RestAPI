@@ -10,10 +10,10 @@ class EmailSenderMandrill:
 
     def send(self, from_email, to_list, cc_list, bcc_list, subject, text):
         """
-        To send mail using Mandrill
+        To send email using Mandrill
 
         params:
-            -from_mail
+            -from_email
             -to_list
             -cc_list(optional)
             -bcc_list(optional)
