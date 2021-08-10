@@ -17,8 +17,7 @@ class EmailSenderAWS:
             -cc_list(optional)
             -bcc_list(optional)
             -subject
-            -text
-            
+            -text   
         """
         key = os.environ["AWSAccessKeyId"]
         secret = os.environ["AWSSecretKey"]
