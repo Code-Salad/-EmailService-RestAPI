@@ -12,7 +12,7 @@ class EmailSenderAWS:
         To send mail using AWS SES
 
         params:
-            -from_mail
+            -from_email
             -to_list
             -cc_list(optional)
             -bcc_list(optional)
