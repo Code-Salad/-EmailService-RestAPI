@@ -19,10 +19,6 @@ class EmailSenderMandrill:
             -bcc_list(optional)
             -subject
             -text
-
-        return 0 if the sending sucess
-        return 1 if the sending failed
-        return 5 if the configuration is not complete
         """
         api_url = os.environ["mandrill_api_url"]
         key = os.environ["mandrill_key"]
@@ -64,6 +60,6 @@ class EmailSenderMandrill:
 
             message = str(response.content)
 
-            print("Mandrill")
+#             print("Mandrill")
 
             return status, message
