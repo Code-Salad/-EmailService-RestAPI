@@ -19,10 +19,6 @@ class EmailSenderMailJet:
             -bcc_list(optional)
             -subject
             -text
-
-        return 0 if the sending sucess
-        return 1 if the sending failed
-        return 5 if the configuration is not complete
         """
         api_url = os.environ["mailjet_api_url"]
         key = os.environ["mailjet_key"]
@@ -70,6 +66,6 @@ class EmailSenderMailJet:
                 status = 1
             message = str(response.content)
 
-            print("MailJet")
+#             print("MailJet")
 
             return status, message
