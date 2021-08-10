@@ -8,12 +8,12 @@ class EmailSenderMailJet:
     This is the email sender class using the MAILJET implementation
     """
 
-    def send(self, from_mail, to_list, cc_list, bcc_list, subject, text):
+    def send(self, from_email, to_list, cc_list, bcc_list, subject, text):
         """
-        To send mail using Mailjet
+        To send email using Mailjet
 
         params:
-            -from_mail
+            -from_email
             -to_list
             -cc_list(optional)
             -bcc_list(optional)
@@ -47,7 +47,7 @@ class EmailSenderMailJet:
         mailjet_data = {
             "Messages": [
                 {
-                    "From": {"Email": from_mail},
+                    "From": {"Email": from_email},
                     "To": to_address_list,
                     "Cc": cc_address_list,
                     "Bcc": bcc_address_list,
