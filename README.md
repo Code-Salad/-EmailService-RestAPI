@@ -7,6 +7,8 @@ Email service currently supported are:
 - AWS SES
 - Mandrill
 
+It remembers the previous working email service, and tries to use it to send the email.
+
 Setup
 -----------
 Create a .env file and add the following keys.
