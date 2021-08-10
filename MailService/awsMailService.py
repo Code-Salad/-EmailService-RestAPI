@@ -18,10 +18,7 @@ class EmailSenderAWS:
             -bcc_list(optional)
             -subject
             -text
-
-        return 0 if the sending sucess
-        return 1 if the sending failed
-        return 5 if the configuration is not complete
+            
         """
         key = os.environ["AWSAccessKeyId"]
         secret = os.environ["AWSSecretKey"]
@@ -62,6 +59,6 @@ class EmailSenderAWS:
                 status = 0
                 message = response["MessageId"]
 
-            print("AWS")
+#             print("AWS")
 
             return status, message
