@@ -58,6 +58,6 @@ class EmailSenderAWS:
                 status = 0
                 message = response["MessageId"]
 
-#             print("AWS ")
+#             print("AWS")
 
             return status, message
